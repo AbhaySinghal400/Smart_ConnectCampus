@@ -1,0 +1,21 @@
+# Smart CampusConnect - .gitignore
+# Operating System files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# IDE & Editor folders
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Environment and sensitive keys
+.env
+config.local.php
+
+# Web server logs
+*.log
+error_log

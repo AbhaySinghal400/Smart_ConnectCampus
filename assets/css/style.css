@@ -1,0 +1,379 @@
+/**
+ * Smart CampusConnect - Unified Campus Management Portal
+ * Custom Master Stylesheet
+ * BCA 5th Semester Major Project 1
+ */
+
+:root {
+  --primary-color: #1e3a8a;      /* Navy Blue */
+  --primary-hover: #1e40af;
+  --secondary-color: #2563eb;    /* Royal Blue */
+  --accent-color: #0d9488;       /* Deep Teal */
+  --accent-hover: #0f766e;
+  --bg-main: #f1f5f9;            /* Slate Light Gray */
+  --card-bg: #ffffff;
+  --sidebar-bg: #0f172a;         /* Deep Navy / Dark Slate */
+  --sidebar-hover: #1e293b;
+  --sidebar-active: #2563eb;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --topbar-height: 70px;
+  --sidebar-width: 260px;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-main);
+  color: var(--text-dark);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* -------------------------------------------------------------
+ * Top Navigation Bar
+ * ------------------------------------------------------------- */
+.topbar {
+  height: var(--topbar-height);
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: var(--sidebar-width);
+  z-index: 1020;
+  transition: left 0.3s ease;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* -------------------------------------------------------------
+ * Sidebar Navigation
+ * ------------------------------------------------------------- */
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--sidebar-bg);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+
+.sidebar-brand {
+  height: var(--topbar-height);
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.sidebar-brand img {
+  height: 38px;
+  width: 38px;
+  border-radius: 8px;
+}
+
+.sidebar-brand .brand-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.sidebar-brand .brand-badge {
+  font-size: 0.65rem;
+  background-color: var(--accent-color);
+  color: #ffffff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.sidebar-nav {
+  padding: 1rem 0.75rem;
+  flex-grow: 1;
+}
+
+.nav-section-title {
+  color: #64748b;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 0.75rem 0.75rem 0.35rem 0.75rem;
+}
+
+.sidebar-nav .nav-link {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.sidebar-nav .nav-link i {
+  font-size: 1.15rem;
+  width: 22px;
+  text-align: center;
+}
+
+.sidebar-nav .nav-link:hover {
+  color: #ffffff;
+  background-color: var(--sidebar-hover);
+}
+
+.sidebar-nav .nav-link.active {
+  color: #ffffff;
+  background-color: var(--sidebar-active);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.sidebar-user-footer {
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* -------------------------------------------------------------
+ * Main Workspace Layout
+ * ------------------------------------------------------------- */
+.main-wrapper {
+  margin-left: var(--sidebar-width);
+  padding-top: var(--topbar-height);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease;
+}
+
+.page-content {
+  padding: 1.75rem;
+  flex-grow: 1;
+}
+
+/* -------------------------------------------------------------
+ * Dashboard Stat Cards
+ * ------------------------------------------------------------- */
+.stat-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  padding: 1.4rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+}
+
+.stat-card .stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.stat-card .stat-value {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.stat-card .stat-label {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* -------------------------------------------------------------
+ * Modern Data Cards & Tables
+ * ------------------------------------------------------------- */
+.app-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.app-card-header {
+  padding: 1.15rem 1.4rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 12px 12px 0 0;
+}
+
+.app-card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.app-card-body {
+  padding: 1.4rem;
+}
+
+.table-custom {
+  margin-bottom: 0;
+}
+
+.table-custom thead th {
+  background-color: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.85rem 1rem;
+}
+
+.table-custom tbody td {
+  padding: 0.95rem 1rem;
+  vertical-align: middle;
+  color: #1e293b;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.table-custom tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* -------------------------------------------------------------
+ * Buttons & Badges
+ * ------------------------------------------------------------- */
+.btn-primary {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.btn-teal {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.btn-teal:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #ffffff;
+}
+
+/* -------------------------------------------------------------
+ * Auth Pages (Login & Register)
+ * ------------------------------------------------------------- */
+.auth-body {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #1e3a8a 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.auth-card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  max-width: 900px;
+  width: 100%;
+}
+
+.auth-sidebar {
+  background: linear-gradient(135deg, #1e3a8a 0%, #0d9488 100%);
+  color: #ffffff;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.auth-form-side {
+  padding: 3rem 2.5rem;
+}
+
+/* -------------------------------------------------------------
+ * Responsive Drawer / Mobile
+ * ------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  .sidebar.show {
+    transform: translateX(0);
+  }
+  .topbar {
+    left: 0;
+  }
+  .main-wrapper {
+    margin-left: 0;
+  }
+  .page-content {
+    padding: 1rem;
+  }
+  .sidebar-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(2px);
+    z-index: 1025;
+  }
+}
