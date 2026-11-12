@@ -376,9 +376,7 @@ try {
                     <p class="text-secondary small mb-0 mt-1">BCA 5th Semester Major Project 1 &bull; Academic Year 2026-2027</p>
                 </div>
                 <div class="col-md-6 text-md-end text-center">
-                    <div class="text-light small">
-                        <strong>Team of 4 Members:</strong> Member 1 (Student) &bull; Member 2 (Faculty/Attendance) &bull; Member 3 (Admin/DB) &bull; Member 4 (Academic Ops)
-                    </div>
+                    
                 </div>
             </div>
         </div>
